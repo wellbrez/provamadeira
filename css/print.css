@@ -1,0 +1,62 @@
+body
+{
+	background-color:#ffffff;
+}
+p
+{
+	display:none;
+}
+input
+{
+	display:none;
+}
+h1
+{
+	color:black;
+	font-size: 20pt
+}
+#secaocarregamento
+{
+	display:none;
+}
+.botao_mostrar_arquivo
+{
+	display:none;
+
+}
+#previewdiv
+{
+	display:none;
+}
+#analise_carregamento
+{
+	background-color:#ffffff;
+}
+#analise_deformacao
+{
+	background-color:#ffffff;
+}
+
+
+.secao
+{
+	background-color:#ffffff;
+	page-break-after:always;
+}
+h2
+{
+
+	
+	color:black;
+	font-size: 20pt
+}
+.table
+{
+	overflow:visible;
+	font-size:10pt;
+	page-break-after:always;
+}
+#botao_relatorio
+{
+	display:none;
+}

@@ -1,0 +1,119 @@
+*
+{
+	font-family:"Century Gothic";
+	font-size:14pt;
+}
+body{background-color:#b2b2b2;}
+.secao
+{
+	background-color:#020122;
+	padding:3%;
+	width:94%;
+	color:white;
+	text-align:center;
+}
+p{
+	font-size:20pt
+}
+#inputfile
+{
+	background-color:#FC9E4F;
+	color:black;
+	font-style:bold;
+	font-size:14pt;
+}
+#arquivo_carregado
+{
+	display:none;
+	width:90%;
+	border-radius:20px;
+	background-color:white;
+	margin:auto;
+	padding:20px;
+	color:black;
+}
+.botao_mostrar_arquivo
+{
+	border-color:#b2b2b2;
+	border-style: solid;
+	text-align:center;
+	cursor:pointer;
+	user-select:none;
+	background-color:#07123E;
+	color:white;
+	padding:10px;
+	display:inline-block;
+
+	margin:20px;
+	border-radius:30px;
+	font-size:20px;
+}
+.botao_mostrar_arquivo:hover
+{
+	background-color:#4f5f9e;
+}
+#previewdiv{
+	background-color:#b2b2b2;
+	text-align:center;
+	display:block;
+	border-radius:20px;
+}
+pre{
+	text-align:center;
+}
+#analise_carregamento, #analise_deslocamento
+{
+	width:100%;
+	height:auto;
+	background-color:#ffffff;
+	text-align:center;
+	display:block;
+	border-radius:20px;
+
+}
+canvas{
+	border-radius:20px;
+}
+table
+{
+	border-radius:2px;
+	font-size:14pt;
+	color:black;
+	background-color: white;
+	border:1px solid black;
+	text-align:center;
+	margin: 0 auto;
+	padding:15px;
+}
+th, td,caption
+{
+	border-radius:2px;
+	font-size:14pt;
+	color:black;
+	background-color: white;
+	border:1px solid black;
+	text-align:center;
+	margin: 0 auto;
+
+}
+.table
+{
+	overflow:auto;
+	border-radius:20px;
+}
+#botao_relatorio
+{
+	display:none;
+}
+#divrelatorio
+{
+	display:none;
+	overflow:hidden;
+}
+img
+{
+	height:180px;
+	width:180px;
+	display:fixed;
+
+}

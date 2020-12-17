@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/screen.css" media="all">
+	<link rel="stylesheet" href="css/print.css" media="print">
+	<script src="p5/p5.js" type="text/javascript"></script>
+	
+
+	<script src="funcoes_da_internet/funcoes_da_internet.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		
+		tipo = "";
+		categoria = "";
+		kmod1txt=""
+		kmod2txt=""
+		kmod3txt=""
+
+		var p5sketch = function(p)
+		{
+			p.setup = function()
+			{
+				console.log("P5 sketch started")
+			}
+		}
+		p5skt = new p5(p5sketch)
+
+		
+		function mudar_visibilidade(id)
+		{
+			if (document.getElementById(id).style.display=='block')
+			{
+				document.getElementById(id).style.display='none';
+			}
+			else
+			{
+				document.getElementById(id).style.display='block';
+			}
+		}
+	</script>
+
+<meta charset="UTF-8">
+<title>PF Madeira</title>
+</head>
+<body>
+
+<div class=secao id=secaocarregamento>
+
+	<p><b>Hey! Este programa foi bem trabalhoso de fazer,<br> se puder contribuir com alguma doação, meu PicPay é @wellington.bravin2<b></p>
+		<img src=imagens/picpay.png>
+		
+  	 
+  	 	<br>
+		<!-- Botão que interpreta os resultados da string-->
+  	 	<!--<pre id=arquivo_carregado></pre>-->
+		   <!-- Script que carrega o arquivo no preview e em uma string chamada filestring-->
+		   <p>Escolha a madeira</p>
+		<select name="Tipo de madeira" id="infomadeira">
+
+			<option value=""></option>
+			<option value=0>Angelim araroba</option>
+			<option value=1>Angelim ferro</option>
+			<option value=2>Angelim pedra</option>
+			<option value=3>Angelim pedra verdadeiro</option>
+			<option value=4>Branquilho</option>
+			<option value=5>Cafearana</option>
+			<option value=6>Canafístula</option>
+			<option value=7>Casca grossa</option>
+			<option value=8>Castelo</option>
+			<option value=9>Cedro amargo</option>
+			<option value=10>Cedro doce</option>
+			<option value=11>Champagne</option>
+			<option value=12>Cupiúba</option>
+			<option value=13>Catiúba</option>
+			<option value=14>E.Alba</option>
+			<option value=15>E.Camaldulensis</option>
+			<option value=16>E.Citriodora</option>
+			<option value=17>E.Cloeziana</option>
+			<option value=18>E.Dunnii</option>
+			<option value=19>E.Grandis</option>
+			<option value=20>E.Maculata</option>
+			<option value=21>E.Maidene</option>
+			<option value=22>E.Microcorys</option>
+			<option value=23>E.Paniculata</option>
+			<option value=24>E.Propinqua</option>
+			<option value=25>E.Punctata</option>
+		</select>
+		<select name="Categoria" id="categoria">
+			<option value=""></option>
+			<option value=0>1ª Categoria</option>
+			<option value=1>2ª Categoria</option>
+		</select>
+		<select name="Tipo" id="tipo">
+			<option value=""></option>
+			<option value=0>Dicotiledonea Serrada</option>
+			<option value=1>Conifera Serrada</option>
+			<option value=2>Laminada colada</option>
+		</select>
+		<p>Calculo do KMOD</p>
+		<p>Classe de carregamento</p>
+		<select name="Classe de carregamento" id="kmod1">
+			<option value=""></option>
+			<option value=0>Permanente</option>
+			<option value=1>Longa duração (Mais comum)</option>
+			<option value=2>Média duração</option>
+			<option value=3>Curta duração</option>
+			<option value=4>Instantanea</option>
+		</select>
+		Kmod1 = <la class="kmod1"></la>
+		<p>Umidade do ambiente</p>
+		<select name="Umidade do ambiente" id="kmod2">
+			<option value=""></option>
+			<option value=0>Classe 1 (0 - 65%)</option>
+			<option value=1>Classe 2 (65% - 75%)</option>
+			<option value=2>Classe 3 (75% - 85%)</option>
+			<option value=3>Classe 4 (85% - 100%)</option>
+		</select>
+		Kmod2 = <la class="kmod2"></la>
+		<p>Tipo de madeira</p>
+		Kmod3 = <la class="kmod3"></la>
+		<p>Kmod = Kmod1*Kmod2*Kmod3 = <la class="kmod"></la></p>
+		<p></p>
+		<script src="propmec.js" type="text/javascript"></script>
+		<script src="kmod.js" type="text/javascript"></script>
+		<p>Resistências medias</p>
+		<table>
+<tbody>
+<tr><td>Fc0 (tabelado)</td> <td><la class="fcm0"></la> MPa</td></tr>
+<tr><td>Fc90 (0,25*Fc0)</td> <td><la class="fcm90"></la> MPa</td></tr>
+<tr><td>Ft0 (tabelado)</td>  <td><la class="ftm0"></la> MPa</td></tr>
+<tr><td>Ft90 (tabelado)</td>  <td><la class="ftm90"></la> MPa</td></tr>
+<tr><td>Ft90 (tabelado)</td>  <td><la class="ftm90"></la> MPa</td></tr>
+</tbody>
+</table>
+		<p>Resistências medias</p>
+
+</body>
+</div>
+
+
+</html>
