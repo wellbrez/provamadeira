@@ -38,17 +38,16 @@ document.getElementById("infomadeira").addEventListener('change', (event) => {
     ftm90= propmec[index][2]
     fvm0= propmec[index][3]
     fvm90= 0
-    Ec0= propmec[index][4]
-    Ec90= Ec0/20
+    El0= propmec[index][4]
+    El90= El0/20
     console.log(ftm0)
     atualizar_texto("fcm0",fcm0)
     atualizar_texto("fcm90",fcm90)
     atualizar_texto("ftm0",ftm0)
     atualizar_texto("ftm90",ftm90)
     atualizar_texto("fvm0",fvm0)
-    atualizar_texto("fvm90",fvm90)
-    atualizar_texto("Ec0",Ec0)
-    atualizar_texto("Ec90",Ec90)
+    atualizar_texto("E0",El0)
+    atualizar_texto("E90",El90)
 
 })
 
