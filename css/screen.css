@@ -6,70 +6,43 @@
 body{background-color:#b2b2b2;}
 .secao
 {
+	border-radius:4px;
 	background-color:#020122;
 	padding:3%;
 	width:94%;
 	color:white;
 	text-align:center;
+	display:block;
 }
 p{
-	font-size:20pt
+	font-size:15pt;
 }
-#inputfile
-{
-	background-color:#FC9E4F;
-	color:black;
-	font-style:bold;
-	font-size:14pt;
+h1{
+	font-size:18pt;
+	background-color:#020122;
+	padding:30px;
+	border-radius:4px
 }
-#arquivo_carregado
+.botao_mostrar_secao
 {
-	display:none;
-	width:90%;
-	border-radius:20px;
-	background-color:white;
-	margin:auto;
-	padding:20px;
-	color:black;
-}
-.botao_mostrar_arquivo
-{
-	border-color:#b2b2b2;
+	border-color:white;
 	border-style: solid;
+	border-width:20px;
 	text-align:center;
 	cursor:pointer;
 	user-select:none;
-	background-color:#07123E;
+	background-color:#020122;
 	color:white;
-	padding:10px;
-	display:inline-block;
+	padding:30px;
 
 	margin:20px;
-	border-radius:30px;
-	font-size:20px;
+	border-radius:10px;
+	font-size:25px;
 }
-.botao_mostrar_arquivo:hover
+.botao_mostrar_secao:hover
 {
-	background-color:#4f5f9e;
-}
-#previewdiv{
-	background-color:#b2b2b2;
-	text-align:center;
-	display:block;
-	border-radius:20px;
-}
-pre{
-	text-align:center;
-}
-#analise_carregamento, #analise_deslocamento
-{
-	width:100%;
-	height:auto;
-	background-color:#ffffff;
-	text-align:center;
-	display:block;
-	border-radius:20px;
-
+	background-color:#020122;
+	border-color:#020122;
 }
 canvas{
 	border-radius:20px;
@@ -115,5 +88,8 @@ img
 	height:180px;
 	width:180px;
 	display:fixed;
+	border-radius:10px;
+	border-width:10px;
+	border-color:white;
 
 }

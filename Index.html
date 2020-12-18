@@ -47,13 +47,13 @@
 		
 		function mudar_visibilidade(id)
 		{
-			if (document.getElementById(id).style.display=='block')
+			if (document.getElementById(id).style.display=='none')
 			{
-				document.getElementById(id).style.display='none';
+				document.getElementById(id).style.display='block';
 			}
 			else
 			{
-				document.getElementById(id).style.display='block';
+				document.getElementById(id).style.display='none';
 			}
 		}
 	</script>
@@ -73,6 +73,9 @@
 		<!-- Botão que interpreta os resultados da string-->
   	 	<!--<pre id=arquivo_carregado></pre>-->
 		   <!-- Script que carrega o arquivo no preview e em uma string chamada filestring-->
+</div>
+<div class=botao_mostrar_secao onclick=mudar_visibilidade("resistenciadecalculo")>Cálculo dos parâmetros da madeira (Resistencia de calculo, Módulo de elasticidade)</div>
+<div class=secao id=resistenciadecalculo>
 	<p>Escolha a madeira</p>
 	<select name="Tipo de madeira" id="infomadeira">
 
