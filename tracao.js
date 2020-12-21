@@ -14,6 +14,7 @@ ntracao=0;
 dfurotracao=0;
 Antracao=0;
 solicitantetracao=0;
+entalheaneltracao=0;
 
 
 document.getElementById("Ndtracao").addEventListener('change', (event) => {
@@ -22,11 +23,11 @@ document.getElementById("Ndtracao").addEventListener('change', (event) => {
 })
 document.getElementById("btracao").addEventListener('change', (event) => {
     btracao = parseFloat(document.getElementById("btracao").value);
-    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
+    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
 })
 document.getElementById("htracao").addEventListener('change', (event) => {
     htracao = parseFloat(document.getElementById("htracao").value);
-    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
+    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
 })
 document.getElementById("ptracao").addEventListener('change', (event) => {
     ptracao = parseFloat(document.getElementById("ptracao").value);
@@ -35,31 +36,32 @@ document.getElementById("ptracao").addEventListener('change', (event) => {
 document.getElementById("parametrotracao").addEventListener('change', (event) => {
     parametrotracao = parseFloat(document.getElementById("parametrotracao").value);
     dfurotracao = calculardfurotracao(ptracao,parametrotracao)
+    dtracao=dfurotracao
 
 })
 document.getElementById("Dtracao").addEventListener('change', (event) => {
     Dtracao = parseFloat(document.getElementById("Dtracao").value);
-    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
-})
-document.getElementById("dtracao").addEventListener('change', (event) => {
-    dtracao = parseFloat(document.getElementById("dtracao").value);
-    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
+    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
 })
 document.getElementById("ttracao").addEventListener('change', (event) => {
     ttracao = parseFloat(document.getElementById("ttracao").value);
-    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
+    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
 })
 document.getElementById("t1tracao").addEventListener('change', (event) => {
     t1tracao = parseFloat(document.getElementById("t1tracao").value);
-    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
+    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
 })
 document.getElementById("t2tracao").addEventListener('change', (event) => {
     t2tracao = parseFloat(document.getElementById("t2tracao").value);
-    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
+    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
 })
 document.getElementById("ntracao").addEventListener('change', (event) => {
     ntracao = parseFloat(document.getElementById("ntracao").value);
-    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
+    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
+})
+document.getElementById("entalheaneltracao").addEventListener('change', (event) => {
+    entalheaneltracao = parseFloat(document.getElementById("entalheaneltracao").value);
+    calcularAntracao(btracao,htracao,ptracao,dfurotracao,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
 })
 
 
@@ -92,12 +94,11 @@ function calculardfurotracao(indice,parametro)
         dfuro=0;
     }
     atualizar_texto("dfurotracao",dfuro.toFixed(2))
-    calcularAntracao(btracao,htracao,ptracao,dfuro,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao)
+    calcularAntracao(btracao,htracao,ptracao,dfuro,Dtracao,dtracao,ttracao,t1tracao,t2tracao,ntracao,entalheaneltracao)
     return dfuro;
 }
-function calcularAntracao(b,h,indice,dfuro,D,d,t,t1,t2,n)
+function calcularAntracao(b,h,indice,dfuro,D,d,t,t1,t2,n,indiceaneltracao)
 {
-    let An;
     console.log(n)
     dfuro = dfuro/10;
     D = D/10;
@@ -105,25 +106,14 @@ function calcularAntracao(b,h,indice,dfuro,D,d,t,t1,t2,n)
     t = t/10;
     t1 = t1/10;
     t2 = t2/10;
-    if(indice==0)
+    let An= b*h - n*b*dfuro;
+    if(indiceaneltracao==1 || indiceaneltracao==2)
     {
-        An = b*h-n*b*dfuro;
+        An -= n*t*D-n*b*d
     }
-    else if(indice==1)
+    if(indiceaneltracao==0 || indiceaneltracao==2)
     {
-        An = b*h-n*b*dfuro; 
-    }
-    else if(indice==2)
-    {
-        An = b*h-n*b*dfuro; 
-    }
-    else if(indice==3)
-    {
-        An = b*h-n*t*D-n*b*d
-    }
-    else if(indice==4)
-    {
-        An = b*h-(t1+t2)*b
+        An -= (t1+t2)*b
     }
     atualizar_texto("Antracao",An.toFixed(2))
     calcularsolicitantetracao(Ndtracao,An);

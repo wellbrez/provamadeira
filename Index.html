@@ -237,18 +237,22 @@
 		<option value=0>Diâmetro do prego</option>
 		<option value=1>Diâmetro do parafuso</option>
 		<option value=2>Diâmetro do furo</option>
-		<option value=3>Conector de anel</option>
-		<option value=4>Entalhe</option>
+	</select>
+	Adicional: 
+	<select name="Entalhe e anel" id=entalheaneltracao>
+		<option value=""></option>
+		<option value=0>Entalhe</option>
+		<option value=1>Anel</option>
+		<option value=2>Ambos</option>
+		<option value=3>Nenhum</option>
 	</select>
 	<br><br>
-	Digite o valor do parâmetro apresentado, em milímetros. (Deixar em branco para anel ou entalhe)
+	Digite o valor do parâmetro apresentado, em milímetros. (Deixar em branco para apenas entalhe)
 	<br>
 	<input type="text" id="parametrotracao"><br><br>
 	Digite o valor do diâmetro maior D do furo (em caso de anel), em milímetros. Caso contrário deixe em branco
 	<br>
 	<input type="text" id="Dtracao"><br><br>
-	Digite o valor do diâmetro menor d do furo (em caso de anel), em milímetros. Caso contrário deixe em branco
-	<br><input type="text" id="dtracao"><br><br>
 	Digite o valor da profundidade do furo do anel maior t (em caso de anel), em milímetros. Caso contrário deixe em branco
 	<br><input type="text" id="ttracao"><br><br>
 	Digite a profundidade do entalhe superior t1 (em caso de entalhe), em milímetros. Caso contrário deixe em branco
@@ -265,7 +269,7 @@
 		....Se dprego menor ou igual a 6mm -> dfuro = 0<br>
 		....Se dprego maior que 6mm -> dfuro = 2*dprego<br>
 	
-	<pink>Para o seu caso, dfuro = <la class="dfurotracao"></la> (mm). •Desconsiderar este dado para ligações por entalhe ou anel<br><br></pink>
+	<pink>Para o seu caso, dfuro = <la class="dfurotracao"></la> (mm). •Desconsiderar este dado para ligações por apenas entalhe<br><br></pink>
 	
 	Cálculo do número de furos a ser descontado (n):<br><br>
 	<img id=nfurosimg src=imagens/nfuros.svg><br><br>
