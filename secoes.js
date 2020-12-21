@@ -30,7 +30,7 @@ function calcular_secaot(bf,tf,tw,hw,Lef)
 {
     let A = bf*tf+tw*hw
     let ybarra = (bf*tf*(tf/2)+tw*hw*(tf+hw/2))/(bf*tf+tw*hw)
-    let Ix = tw*hw**3/12+tw*hw*(ybarra-(tf+hw/2))**2+bf*tf**3 + bf*tf*(ybarra-tf/2)**2
+    let Ix = tw*hw**3/12+tw*hw*(ybarra-(tf+hw/2))**2+bf*tf**3/12 + bf*tf*(ybarra-tf/2)**2
     let Iy = hw*tw**3/12 + tf*bf**3/12 
     let ix = (Ix/A)**.5
     let iy = (Iy/A)**.5
