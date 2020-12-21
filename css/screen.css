@@ -12,6 +12,10 @@ body{background-color:#b2b2b2;}
 	width:94%;
 	color:white;
 	text-align:center;
+	display:none;
+}
+#secaocarregamento
+{
 	display:block;
 }
 p{

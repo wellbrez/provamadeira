@@ -47,13 +47,13 @@
 		
 		function mudar_visibilidade(id)
 		{
-			if (document.getElementById(id).style.display=='none')
+			if (document.getElementById(id).style.display=='block')
 			{
-				document.getElementById(id).style.display='block';
+				document.getElementById(id).style.display='none';
 			}
 			else
 			{
-				document.getElementById(id).style.display='none';
+				document.getElementById(id).style.display='block';
 			}
 		}
 	</script>
@@ -74,6 +74,7 @@
   	 	<!--<pre id=arquivo_carregado></pre>-->
 		   <!-- Script que carrega o arquivo no preview e em uma string chamada filestring-->
 </div>
+
 <div class=botao_mostrar_secao onclick=mudar_visibilidade("resistenciadecalculo")>Cálculo dos parâmetros da madeira (Resistencia de calculo, Módulo de elasticidade)</div>
 <div class=secao id=resistenciadecalculo>
 	<p>Escolha a madeira</p>
@@ -190,7 +191,27 @@
 	</table>
 </body>
 </div>
-
+<div class=botao_mostrar_secao onclick=mudar_visibilidade("combinacaoesforcos")>Cálculo da combinação de esforços</div>
+<div class=secao id=combinacaoesforcos>
+	<p>Tutorial: •Para as cargas permanentes, olhe nas tabelas de carga permanente</p>
+	<p>•Para as cargas variáveis, olhe nas tabelas de carga variável</p>
+	<p>•As permanentes, multiplique pelo valor de γg</p>
+	<p>•Escolha uma das variáveis como carga variável principal. Ela você vai multiplicar só por γq</p>
+	<p>•OBS.: Se sua variável principal for carga de vento, multiplique por 0,75 também.</p>
+	<p>•As demais cargas variáveis, você multiplica por γq e fi1</p>
+	
+	<div class=botao_mostrar_secao onclick=mudar_visibilidade("tabelascp")>Tabelas de carga permanente</div>
+	<div class=secao id=tabelascp>
+		<img src=imagens/CPGV.png>
+		<img src=imagens/CPPV.png>
+		<img src=imagens/CPI.png>
+	</div>
+	<div class=botao_mostrar_secao onclick=mudar_visibilidade("tabelascv")>Tabelas de carga variável</div>
+	<div class =secao id=tabelascv>
+		<img src=imagens/CV.png>
+		<img src=imagens/CV2.png>
+	</div>
+</div>
 <div class=botao_mostrar_secao onclick=mudar_visibilidade("pecastracionadas")>Cálculo de peças tracionadas</div>
 <div class=secao id=pecastracionadas>
 	****Atenção!! Todos os valores indicados devem estar separados por ponto (.)<br><br>
