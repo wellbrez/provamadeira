@@ -27,11 +27,23 @@ var propmec =
 [51.6,89.1,4.7,9.7,15561],
 [78.5,125.6,6,12.9,19360]
 ]
+var propmec2=
+[[20,4,3500],
+[25,5,8500],
+[30,6,14500],
+[20,4,9500],
+[30,5,14500],
+[40,6,19500],
+[60,8,24500]
+]
+
 
 
 
 document.getElementById("infomadeira").addEventListener('change', (event) => {
     index = document.getElementById("infomadeira").value
+    if (index<=25)
+    {
     fcm0= propmec[index][0]
     fcm90= fcm0*0.25
     ftm0= propmec[index][1]
@@ -48,6 +60,24 @@ document.getElementById("infomadeira").addEventListener('change', (event) => {
     atualizar_texto("fvm0",fvm0)
     atualizar_texto("E0",El0)
     atualizar_texto("E90",El90)
+    }
+    else
+    {
+        fcm0 = propmec2[index-26][0]
+        fcm90= fcm0*0.25
+        ftm0 = fcm0/0.77
+        ftm90 = "N/A"
+        fvm0 = propmec2[index-26][1]
+        El0 = propmec2[index-26][2]
+        El90= El0/20
+        atualizar_texto("fcm0",fcm0)
+    atualizar_texto("fcm90",fcm90)
+    atualizar_texto("ftm0",ftm0.toFixed(2))
+    atualizar_texto("ftm90",ftm90)
+    atualizar_texto("fvm0",fvm0)
+    atualizar_texto("E0",El0)
+    atualizar_texto("E90",El90)
+    }
 
 })
 

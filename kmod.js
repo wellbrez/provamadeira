@@ -126,6 +126,9 @@ function attkmod()
 }
 function calcularfc(kmodtotal)
 {
+    index = document.getElementById("infomadeira").value
+    if (index>=25)
+    {
     fc0d=fcm0*0.7*kmodtotal/1.4
     fc90d=fcm90*0.7*kmodtotal/1.4
     ft0d=ftm0*0.7*kmodtotal/1.8
@@ -143,5 +146,24 @@ function calcularfc(kmodtotal)
     atualizar_texto("E0d",E0d.toFixed(2))
     atualizar_texto("E90d",E90d.toFixed(2))
     atualizar_texto("Emd",Emd.toFixed(2))
-    console.log("Rodeiwtf")
+    }
+    else
+    {
+        fc0d=fcm0*kmodtotal/1.4
+        fc90d=fcm90*kmodtotal/1.4
+        ft0d=ftm0*kmodtotal/1.8
+        ft90d="N/A"
+        fv0d=fvm0*kmodtotal/1.8
+        E0d=El0*kmodtotal
+        E90d=El90*kmodtotal
+        Emd=Em*kmodtotal
+        atualizar_texto("fc0d",fc0d.toFixed(2))
+        atualizar_texto("fc90d",fc90d.toFixed(2))
+        atualizar_texto("ft0d",ft0d.toFixed(2))
+        atualizar_texto("fv0d",fv0d.toFixed(2))
+        atualizar_texto("fv90d",fv90d.toFixed(2))
+        atualizar_texto("E0d",E0d.toFixed(2))
+        atualizar_texto("E90d",E90d.toFixed(2))
+        atualizar_texto("Emd",Emd.toFixed(2))
+    }
 }
