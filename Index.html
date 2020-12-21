@@ -66,7 +66,7 @@
 <div class=secao id=secaocarregamento>
 
 	<p><b>Hey! Este programa foi bem trabalhoso de fazer,<br> se puder contribuir com alguma doação, meu PicPay é @wellington.bravin2<b></p>
-		<img src=imagens/picpay.png>
+		<img id=picpay src=imagens/picpay.png>
 		
   	 
   	<br>
@@ -181,6 +181,84 @@
 		</tbody>
 	</table>
 </body>
+</div>
+
+<div class=botao_mostrar_secao onclick=mudar_visibilidade("pecastracionadas")>Cálculo de peças tracionadas</div>
+<div class=secao id=pecastracionadas>
+	****Atenção!! Todos os valores indicados devem estar separados por ponto (.)<br><br>
+	
+	•Esta seção do programa funciona apenas para seções retangulares<br>
+	•Nd é o esforço de cálculo, obtido por combinação de ações, ou dado da questão;<br>
+	•Para peças com duas seções iguais, indicar o esforço de apenas uma (Esforço/2) e as dimensões de apenas uma. 
+	<br><br>
+	Digite o valor de Nd, em kN.
+	<input type="text" id="Ndtracao"><br>
+	Digite o valor da base b, em centímetros.
+	<input type="text" id="btracao"><br>
+	Digite o valor da altura h, em centímetros.
+	<input type="text" id="htracao"><br>
+	<br><br>
+	Imagens de esclarecimento, para casos de ligacao por entalhe ou conector de anel<br><br>
+	<img id= aneltracaoimg src=imagens/aneltracao.svg>
+	<img id= entalhetracaoimg src=imagens/entalhetracao.svg>
+	<br><br>
+	Escolha o parâmetro apresentado na questão (para fixação)
+	<select name="Fixador de tracao" id="ptracao">
+		<option value=""></option>
+		<option value=0>Diâmetro do prego</option>
+		<option value=1>Diâmetro do parafuso</option>
+		<option value=2>Diâmetro do furo</option>
+		<option value=3>Conector de anel</option>
+		<option value=4>Entalhe</option>
+	</select>
+	<br><br>
+	Digite o valor do parâmetro apresentado, em milímetros. (Deixar em branco para anel ou entalhe)
+	<br>
+	<input type="text" id="parametrotracao"><br><br>
+	Digite o valor do diâmetro maior D do furo (em caso de anel), em milímetros. Caso contrário deixe em branco
+	<br>
+	<input type="text" id="Dtracao"><br><br>
+	Digite o valor do diâmetro menor d do furo (em caso de anel), em milímetros. Caso contrário deixe em branco
+	<br><input type="text" id="dtracao"><br><br>
+	Digite o valor da profundidade do furo do anel maior t (em caso de anel), em milímetros. Caso contrário deixe em branco
+	<br><input type="text" id="ttracao"><br><br>
+	Digite a profundidade do entalhe superior t1 (em caso de entalhe), em milímetros. Caso contrário deixe em branco
+	<br><input type="text" id="t1tracao"><br><br>
+	Digite a profundidade do entalhe inferior t2 (em caso de entalhe), em milímetros. Caso contrário deixe em branco
+	<br><input type="text" id="t2tracao"><br><br>
+	
+	<br><br>
+	Cálculo do diâmetro dos furos (dfuro):<br><br>
+	
+	Quando a questão indica diâmetro do furo, dfuro = dfuro.<br>
+	Quando a questão indica diâmetro do parafuso, dfuro = dparafuso + 0,5mm<br>
+	Quando a questão indica diâmetro do prego: <br>
+		....Se dprego menor ou igual a 6mm -> dfuro = 0<br>
+		....Se dprego maior que 6mm -> dfuro = 2*dprego<br>
+	
+	<pink>Para o seu caso, dfuro = <la class="dfurotracao"></la> (mm). •Desconsiderar este dado para ligações por entalhe ou anel<br><br></pink>
+	
+	Cálculo do número de furos a ser descontado (n):<br><br>
+	<img id=nfurosimg src=imagens/nfuros.svg><br><br>
+	Digite o valor de n verificado:
+	<br><input type="text" id="ntracao"><br><br>
+
+	<br><br>Cálculo da área da seção Líquida (An):<br><br>
+	Quando a questão é por prego ou parafuso, An = b*h - n*b*dfuro<br>
+	Quando a questão indica ligação por anel, An = b*h - n*t*D - n*b*d<br>
+	Quando a questão indica ligação por entalhe, An = b*h - (t1+t2)*b<br>
+	<pink>Para o seu caso, An = <la class="Antracao"></la>(cm²)<br><br></pink>
+
+	Tensão solicitante = Nd/An. <br>
+	<pink>Tensão solicitante = <la class="solicitantetracao"></la> MPa</pink><br>
+	Comparar com tensão resistente à tração paralela às fibras, calculada na seção anterior.
+	<script src="tracao.js" type="text/javascript"></script>
+
+	
+	
+
+
+
 </div>
 
 

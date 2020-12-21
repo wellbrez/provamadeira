@@ -83,7 +83,7 @@ th, td,caption
 	display:none;
 	overflow:hidden;
 }
-img
+#picpay
 {
 	height:180px;
 	width:180px;
@@ -92,4 +92,24 @@ img
 	border-width:10px;
 	border-color:white;
 
+}
+#nfurosimg,#entalhetracaoimg,#aneltracaoimg
+{
+	height:500px;
+	width:500px;
+	display:fixed;
+	border-radius:10px;
+	border-width:10px;
+	border-color:white;
+	background-color:white;
+	padding:20px;
+
+}
+#pecastracionadas
+{
+	text-align:left;
+}
+pink
+{
+	color:pink;
 }
