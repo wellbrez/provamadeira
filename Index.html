@@ -191,7 +191,7 @@
 	</table>
 </body>
 </div>
-<div class=botao_mostrar_secao onclick=mudar_visibilidade("combinacaoesforcos")>Cálculo da combinação de esforços</div>
+<div class=botao_mostrar_secao onclick=mudar_visibilidade("combinacaoesforcos")>Cálculo da combinação de esforços (Estado limite de ruptura)</div>
 <div class=secao id=combinacaoesforcos>
 	<p>Tutorial: •Para as cargas permanentes, olhe nas tabelas de carga permanente</p>
 	<p>•Para as cargas variáveis, olhe nas tabelas de carga variável</p>
@@ -199,6 +199,7 @@
 	<p>•Escolha uma das variáveis como carga variável principal. Ela você vai multiplicar só por γq</p>
 	<p>•OBS.: Se sua variável principal for carga de vento, multiplique por 0,75 também.</p>
 	<p>•As demais cargas variáveis, você multiplica por γq e fi1</p>
+	<p>•Cargas variáveis favoráveis à segurança não são utilizadas</p>
 	
 	<div class=botao_mostrar_secao onclick=mudar_visibilidade("tabelascp")>Tabelas de carga permanente</div>
 	<div class=secao id=tabelascp>
@@ -211,6 +212,29 @@
 		<img src=imagens/CV.png>
 		<img src=imagens/CV2.png>
 	</div>
+	Separe valores por ponto (.)<br>
+	Para carga variável principal de vento, mudar o multiplicador para 0.75
+	<table>
+		<tbody>
+			<tr><td>Tipo de carga</td> <td>Valor</td><td>γg ou γq</td><td>Fi ou multiplicador</td></tr>
+			<tr><td>Carga permanente 1</td> <td><input type="text" id="carga1"></td><td><input type="text" id="gamma1"></td><td><input type="text" value=1.00 id="Fi1"></td></tr>
+			<tr><td>Carga permanente 2</td> <td><input type="text" id="carga2"></td><td><input type="text" id="gamma2"></td><td><input type="text" value=1.00 id="Fi2"></td></tr>
+			<tr><td>Carga permanente 3</td>  <td><input type="text" id="carga3"></td><td><input type="text" id="gamma3"></td><td><input type="text"value=1.00 id="Fi3"></td></tr>
+			<tr><td>Carga variável principal</td> <td><input type="text" id="carga4"></td><td><input type="text" id="gamma4"></td><td><input type="text" value = 1.00 id="Fi4"></td></tr>
+			<tr><td>Carga variável 2</td>  <td><input type="text" id="carga5"></td><td><input type="text" id="gamma5"></td><td><input type="text" id="Fi5"></td></tr>
+			<tr><td>Carga variável 3</td>  <td><input type="text" id="carga6"></td><td><input type="text" id="gamma6"></td><td><input type="text" id="Fi6"></td></tr>
+			<tr><td>Carga variável 4</td>  <td><input type="text" id="carga7"></td><td><input type="text" id="gamma7"></td><td><input type="text" id="Fi7"></td></tr>
+			<tr><td>Carga variável 5</td>  <td><input type="text" id="carga8"></td><td><input type="text" id="gamma8"></td><td><input type="text" id="Fi8"></td></tr>
+			<tr><td>Carga variável 6</td>  <td><input type="text" id="carga9"></td><td><input type="text" id="gamma9"></td><td><input type="text" id="Fi9"></td></tr>
+		</tbody>
+	</table>
+	Total: <la class=cargatotal></la>
+	<script src="combinacaocargas.js" type="text/javascript"></script>
+
+
+
+
+
 </div>
 <div class=botao_mostrar_secao onclick=mudar_visibilidade("pecastracionadas")>Cálculo de peças tracionadas</div>
 <div class=secao id=pecastracionadas>
