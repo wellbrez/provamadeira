@@ -424,7 +424,49 @@
 	<div class=botao_mostrar_secao onclick=mudar_visibilidade("secaocx")>Seção caixão</div>
 	<div class=secao id=secaocx>
 	</div>
+
 	<script src="secoes.js" type="text/javascript"></script>
+</div>
+
+	<div class=botao_mostrar_secao onclick=mudar_visibilidade("compressao")>Cálculo de peça sujeita à compressão</div>
+<div class=secao id=compressao>
+	
+	<p>Formula geral: Tensão devido à compressão + Tensão devido à flexão<br>
+		A equação acima deve ser menor do que a tensão resistente (calculada na primeira secao)</p>
+		<p>Tutorial: •Verificar esbeltez pela calculadora de secoes</p>
+		<p>•Se lambda menor que 40, peça curta</p>
+		<p>•Se lambda entre 40 e 80, peça medianamente esbelta</p>
+		<p>•Se lambda maior que 80, peça esbelta</p>
+		<br>
+		<pink><p>•Para peças curtas, considera-se apenas tensão devido à compressão</p></pink>
+		<br>
+		<pink><p>•Para peças medianamente esbeltas, considera-se excentricidade ea=Lef/300 >= h/30</p>
+		<p>Assim, Mi = Pd*ea. Porém, este valor de momento deve ser amplificado para a consideração</p>
+		<p>dos efeitos de flambagem.</p>
+		<p>Md = Mi*Pcr / (Pcr-Pd)</p></pink>
+		<br>
+		<p>Cálculo do Pcr:</p>
+		<p>Pcr = pi²*Eef*I / Lef²</p>
+		<table>
+			<tbody>
+				<tr>
+				<td>Eef (Secao inicial) = </td>
+				<td><input type="text" id="Eeff"> MPa</td></tr>
+
+				<tr>
+				<td>I (Prop. da secao) = </td>
+				<td><input type="text" id="If"> cm4</td></tr>
+
+				<tr>
+					<td>Lef = </td>
+					<td><input type="text" id="Leff"> cm</td></tr>
+			</tbody>
+		</table>
+		<p>Pcr = <la class=pcrf></la> kN	</p>
+		<script src="barras_comprimidas.js" type="text/javascript"></script>
+
+
+</div>
 
 
 </html>
